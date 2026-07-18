@@ -1,0 +1,36 @@
+import { Material } from '@/types';
+
+export const MATERIALS: Material[] = [
+  { id: 'm1', name: 'Cable THW 2.5mm²', category: 'Cables', unit: 'm', unitPrice: 850, description: 'Cable unipolar THW 2.5mm²' },
+  { id: 'm2', name: 'Cable THW 4mm²', category: 'Cables', unit: 'm', unitPrice: 1200, description: 'Cable unipolar THW 4mm²' },
+  { id: 'm3', name: 'Cable THW 6mm²', category: 'Cables', unit: 'm', unitPrice: 1800, description: 'Cable unipolar THW 6mm²' },
+  { id: 'm4', name: 'Cable THW 10mm²', category: 'Cables', unit: 'm', unitPrice: 2900, description: 'Cable unipolar THW 10mm²' },
+  { id: 'm5', name: 'Cable THW 16mm²', category: 'Cables', unit: 'm', unitPrice: 4200, description: 'Cable unipolar THW 16mm²' },
+  { id: 'm6', name: 'Cable N2XOH 2.5mm² x3', category: 'Cables', unit: 'm', unitPrice: 2800, description: 'Cable unipolar N2XOH 2.5mm², juego x3 conductores (fase, neutro, tierra)' },
+  { id: 'm7', name: 'Cable N2XOH 4mm² x3', category: 'Cables', unit: 'm', unitPrice: 4100, description: 'Cable unipolar N2XOH 4mm², juego x3 conductores (fase, neutro, tierra)' },
+  { id: 'm8', name: 'Cable N2XOH 6mm² x3', category: 'Cables', unit: 'm', unitPrice: 5800, description: 'Cable unipolar N2XOH 6mm², juego x3 conductores (fase, neutro, tierra)' },
+  { id: 'm9', name: 'Interruptor termomagnético 1P 10A', category: 'Interruptores', unit: 'ud', unitPrice: 8500, description: 'PIA monopolar 10A' },
+  { id: 'm10', name: 'Interruptor termomagnético 1P 16A', category: 'Interruptores', unit: 'ud', unitPrice: 9200, description: 'PIA monopolar 16A' },
+  { id: 'm11', name: 'Interruptor termomagnético 1P 20A', category: 'Interruptores', unit: 'ud', unitPrice: 9800, description: 'PIA monopolar 20A' },
+  { id: 'm12', name: 'Interruptor termomagnético 1P 25A', category: 'Interruptores', unit: 'ud', unitPrice: 10500, description: 'PIA monopolar 25A' },
+  { id: 'm13', name: 'Interruptor termomagnético 1P 32A', category: 'Interruptores', unit: 'ud', unitPrice: 11200, description: 'PIA monopolar 32A' },
+  { id: 'm14', name: 'Interruptor termomagnético 2P 16A', category: 'Interruptores', unit: 'ud', unitPrice: 18000, description: 'PIA bipolar 16A' },
+  { id: 'm15', name: 'Interruptor termomagnético 2P 20A', category: 'Interruptores', unit: 'ud', unitPrice: 19500, description: 'PIA bipolar 20A' },
+  { id: 'm16', name: 'Interruptor termomagnético 2P 25A', category: 'Interruptores', unit: 'ud', unitPrice: 21000, description: 'PIA bipolar 25A' },
+  { id: 'm17', name: 'Interruptor diferencial 2P 25A 30mA', category: 'Interruptores', unit: 'ud', unitPrice: 28000, description: 'Diferencial 25A sensibilidad 30mA' },
+  { id: 'm18', name: 'Interruptor diferencial 2P 40A 30mA', category: 'Interruptores', unit: 'ud', unitPrice: 32000, description: 'Diferencial 40A sensibilidad 30mA' },
+  { id: 'm19', name: 'Interruptor diferencial 4P 40A 300mA', category: 'Interruptores', unit: 'ud', unitPrice: 65000, description: 'Diferencial tetrapolar 40A sensibilidad 300mA' },
+  { id: 'm20', name: 'Tablero general 12 circuitos', category: 'Tableros', unit: 'ud', unitPrice: 45000, description: 'Tablero general con tapa, 12 slots' },
+  { id: 'm21', name: 'Tablero general 24 circuitos', category: 'Tableros', unit: 'ud', unitPrice: 78000, description: 'Tablero general con tapa, 24 slots' },
+  { id: 'm22', name: 'Tablero general 36 circuitos', category: 'Tableros', unit: 'ud', unitPrice: 110000, description: 'Tablero general con tapa, 36 slots' },
+  { id: 'm23', name: 'Canaleta 40x25mm', category: 'Canaletas', unit: 'm', unitPrice: 2200, description: 'Canaleta PVC 40x25mm' },
+  { id: 'm24', name: 'Canaleta 60x40mm', category: 'Canaletas', unit: 'm', unitPrice: 3800, description: 'Canaleta PVC 60x40mm' },
+  { id: 'm25', name: 'Tubo conduit 20mm', category: 'Canaletas', unit: 'm', unitPrice: 1500, description: 'Tubo conduit PVC rigid 20mm' },
+  { id: 'm26', name: 'Tubo conduit 25mm', category: 'Canaletas', unit: 'm', unitPrice: 2000, description: 'Tubo conduit PVC rigid 25mm' },
+  { id: 'm27', name: 'Luminaria LED 18W', category: 'Luminarias', unit: 'ud', unitPrice: 12000, description: 'Luminaria LED empotrable 18W 4000K' },
+  { id: 'm28', name: 'Luminaria LED 36W', category: 'Luminarias', unit: 'ud', unitPrice: 22000, description: 'Luminaria LED techo 36W 4000K' },
+  { id: 'm29', name: 'Luminaria LED 60W', category: 'Luminarias', unit: 'ud', unitPrice: 35000, description: 'Luminaria LED industrial 60W 5000K' },
+  { id: 'm30', name: 'Esquina canalización 20mm', category: 'Canaletas', unit: 'ud', unitPrice: 800, description: 'Esquina canalización PVC 20mm' },
+];
+
+export const MATERIAL_CATEGORIES = ['Todos', 'Cables', 'Interruptores', 'Tableros', 'Canaletas', 'Luminarias'];

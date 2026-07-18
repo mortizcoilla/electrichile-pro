@@ -1,0 +1,56 @@
+{
+  "name": "ElectriChile Pro",
+  "short_name": "ElectriChile",
+  "description": "Herramientas profesionales para electricistas en Chile: calculadoras, cotizaciones y declaración TE1 según el RIC.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0a0e1a",
+  "theme_color": "#0a0e1a",
+  "orientation": "any",
+  "lang": "es-CL",
+  "categories": ["productivity", "utilities", "business"],
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/maskable-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Cotizador",
+      "short_name": "Cotizar",
+      "description": "Crear cotización rápida",
+      "url": "/?sub=cotizador",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Calculadoras",
+      "short_name": "Calc",
+      "description": "Caída de tensión, ampacidad, cortocircuito",
+      "url": "/?tab=calculators",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "TE1",
+      "short_name": "TE1",
+      "description": "Declaración de instalación SEC",
+      "url": "/?sub=te1",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+    }
+  ]
+}
