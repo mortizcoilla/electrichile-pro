@@ -4,6 +4,7 @@ import { useState, useEffect, type CSSProperties } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, AlertTriangle } from 'lucide-react';
 import Header from '@/components/layout/Header';
+import RegulationRef from '@/components/shared/RegulationRef';
 import { CABLE_COLORS, LEGACY_COLORS, type CableColor } from '@/data/colorsStandard';
 import { badgeVariants } from '@/components/ui/badge';
 
@@ -66,6 +67,12 @@ export default function ColorCodeScreen({ onBack }: Props) {
           {showLegacy ? 'Ocultar' : 'Ver'} colores antiguos (anteriores al RIC)
         </button>
 
+        <div className="space-y-2">
+          <RegulationRef articleId="ric-04-5-32" variant="card" showQuote />
+          <RegulationRef articleId="ric-04-5-30" variant="card" />
+          <RegulationRef articleId="ric-04-5-33" variant="card" />
+        </div>
+
         <AnimatePresence>
           {showLegacy && (
             <motion.div
@@ -83,7 +90,7 @@ export default function ColorCodeScreen({ onBack }: Props) {
                         {legacy.old} → {legacy.modern}
                       </p>
                       <p className="text-xs text-muted">Uso: {legacy.usage}</p>
-                      <p className="text-xs text-accent-warning">{legacy.warning}</p>
+                      <p className="text-xs text-accent-warning">{legacy.note}</p>
                     </div>
                   </div>
                 ))}
