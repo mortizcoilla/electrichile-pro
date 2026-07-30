@@ -1,21 +1,21 @@
 /**
- * @file Cálculo de ampacidad y selección de sección mínima.
+ * @file Cálculo de ampacidad y selección de sección mínima según RIC N°04.
  *
  * @description
  * Implementa la determinación de la sección mínima de un conductor eléctrico
- * según su corriente de diseño, el método de instalación, el material, el tipo
- * de aislamiento, la temperatura ambiente y el agrupamiento de circuitos.
+ * según su corriente de diseño, el método de instalación, el tipo de aislamiento
+ * (PVC 70°C o XLPE 90°C), la temperatura ambiente y el agrupamiento de circuitos.
  *
- * Ref. normativa: RIC N°04, tabla 4.4 (que referencia IEC 60364-5-523).
+ * Ref. normativa: RIC N°04, Tablas 4.4, 4.6, 4.7 (pto 6.2).
  *
  * La ampacidad corregida se calcula como:
  *
- *   I'z = I_z × K_temp × K_agrup
+ *   I_c = I_t × f_n × f_t
  *
- * Donde:
- *   I_z    = ampacidad base (tabla según método y sección)
- *   K_temp = factor de corrección por temperatura ambiente
- *   K_agrup = factor de corrección por agrupamiento de circuitos
+ * donde:
+ *   - I_t: corriente de la tabla 4.4 (RIC N°04)
+ *   - f_n: factor de corrección por agrupamiento (tabla 4.6)
+ *   - f_t: factor de corrección por temperatura (tabla 4.7)
  *
  * La sección mínima admisible es la primera sección normalizada cuya
  * ampacidad corregida sea ≥ la corriente de diseño del circuito.
@@ -35,11 +35,11 @@ import {
 export interface AmpacityInput {
   /** Corriente de diseño del circuito en Amperes. */
   designCurrent: number;
-  /** Método de instalación IEC 60364-5-523. */
+  /** Método de instalación del RIC N°04 (A1, A2, B1, B2, D1, D2, E, F). */
   method: InstallationMethod;
-  /** Material del conductor (cobre o aluminio). */
+  /** Material del conductor. El RIC N°04 solo tabula cobre; aluminio no tabulado. */
   material: ConductorMaterial;
-  /** Tipo de aislamiento (XLPE 90°C o PVC 70°C). */
+  /** Tipo de aislamiento (PVC 70°C o XLPE 90°C). */
   insulation: InsulationType;
   /** Temperatura ambiente en °C. */
   ambientC: number;
@@ -64,35 +64,32 @@ export interface AmpacityResult {
 }
 
 /**
- * Calcula la sección mínima de un conductor para soportar una corriente de diseño.
+ * Calcula la sección mínima de un conductor para soportar una corriente de diseño
+ * según las tablas oficiales del RIC N°04.
  *
  * Recorre la lista de secciones normalizadas (1.5 a 240 mm²) y devuelve la
  * primera cuya ampacidad corregida sea ≥ la corriente de diseño.
  *
- * @param {AmpacityInput} input - Parámetros del circuito y de la instalación.
+ * NOTA: El RIC N°04 no tabula conductores de aluminio. Si el usuario
+ * selecciona aluminio, se aplica un factor de corrección empírico de 0.78
+ * (similar a IEC 60364-5-523, pero este factor NO está en el RIC).
  *
- * @returns {AmpacityResult | null} Resultado con la sección mínima y la tabla
- *                                  completa. null si los parámetros son inválidos.
- *
- * @example
- * const r = calculateAmpacity({
- *   designCurrent: 25,
- *   method: 'B1',
- *   material: 'cobre',
- *   insulation: 'xlpe',
- *   ambientC: 30,
- *   groupedCircuits: 1,
- * });
- * // → { minSection: 4, correctedAmpacity: 32, ... }
+ * @param input - Parámetros del circuito y de la instalación.
+ * @returns Resultado con la sección mínima y la tabla completa. null si los
+ *          parámetros son inválidos.
  */
 export function calculateAmpacity(input: AmpacityInput): AmpacityResult | null {
   if (input.designCurrent <= 0) return null;
-  const Ktemp = getTemperatureFactor(input.insulation, input.ambientC);
+  const Ktemp = getTemperatureFactor(input.insulation, input.method, input.ambientC);
   const Kagr = getGroupingFactor(input.groupedCircuits);
+  const isAluminum = input.material === 'aluminio';
 
   const table = STANDARD_SECTIONS.map((s) => {
-    const base = getBaseAmpacity(s, input.method, input.material);
-    const corrected = base === 0 ? 0 : base * Ktemp * Kagr;
+    const base = getBaseAmpacity(s, input.method, input.insulation);
+    // El RIC N°04 no tabula aluminio. Si el usuario pide aluminio, se aplica
+    // un factor empírico (no es del RIC, advertencia al usuario).
+    const baseWithMaterial = isAluminum && base > 0 ? base * 0.78 : base;
+    const corrected = base === 0 ? 0 : baseWithMaterial * Ktemp * Kagr;
     return { section: s, correctedAmpacity: corrected, valid: corrected >= input.designCurrent };
   });
 
@@ -112,19 +109,15 @@ export function calculateAmpacity(input: AmpacityInput): AmpacityResult | null {
 /**
  * Verifica si una sección específica es suficiente para una corriente de diseño.
  *
- * Internamente llama a {@link calculateAmpacity} y devuelve el mismo resultado.
- * Útil cuando el usuario quiere validar una sección existente en vez de buscar
- * la mínima.
- *
  * @param section        - Sección propuesta en mm².
  * @param designCurrent  - Corriente de diseño del circuito en A.
- * @param method         - Método de instalación IEC.
+ * @param method         - Método de instalación del RIC N°04.
  * @param material       - Material del conductor.
  * @param insulation     - Tipo de aislamiento.
  * @param ambientC       - Temperatura ambiente en °C.
  * @param groupedCircuits- Número de circuitos agrupados.
  *
- * @returns {AmpacityResult | null} Resultado con la tabla y la verificación.
+ * @returns Resultado con la tabla y la verificación.
  */
 export function verifySection(
   section: number,

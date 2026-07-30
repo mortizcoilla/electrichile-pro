@@ -34,7 +34,7 @@ export interface QuickStartStep {
   route?: string;
 }
 
-export const APP_VERSION = '1.1.0';
+export const APP_VERSION = '1.2.0';
 export const APP_LAST_UPDATE = '2026-07-30';
 
 /** Pasos para empezar a usar la app. */
@@ -48,7 +48,7 @@ export const QUICK_START: QuickStartStep[] = [
   {
     number: 2,
     title: 'Usa las calculadoras',
-    description: 'En el Home o en Calculadoras, prueba caída de tensión, ampacidad o cortocircuito. Todos los resultados referencian el RIC vigente.',
+    description: 'En el Home o en Calculadoras, prueba caída de tensión o ampacidad. Todos los resultados referencian el RIC vigente.',
     icon: Calculator,
   },
   {
@@ -67,6 +67,17 @@ export const QUICK_START: QuickStartStep[] = [
 
 /** Changelog de la versión actual. */
 export const CHANGELOG: Array<{ version: string; date: string; changes: string[] }> = [
+  {
+    version: '1.2.0',
+    date: '2026-07-30',
+    changes: [
+      'App basada única y exclusivamente en los 19 pliegos RIC',
+      'Ampacidad reescrita con las tablas oficiales del RIC N°04 (4.4, 4.6, 4.7)',
+      'Calculadoras de Cortocircuito y Selectividad eliminadas (basadas en IEC 60909 y IEC 60898, no son del RIC)',
+      'Pantalla de Autogeneración convertida en informativa con los requisitos del RIC N°09',
+      'Código de colores corregido según RIC N°04 pto 5.32',
+    ],
+  },
   {
     version: '1.1.0',
     date: '2026-07-30',
@@ -140,25 +151,28 @@ export const HELP_SECTIONS: HelpSection[] = [
     id: 'calculators',
     title: 'Calculadoras técnicas',
     icon: Calculator,
-    description: 'Cuatro calculadoras profesionales con referencias al RIC.',
+    description: 'Dos calculadoras profesionales con referencias al RIC.',
     content: [
       {
         type: 'paragraph',
-        text: 'Las calculadoras están diseñadas para responder las preguntas técnicas más comunes en una obra: qué conductor usar, qué protección, si aguanta un cortocircuito.',
+        text: 'Las calculadoras están diseñadas para responder las preguntas técnicas más comunes en una obra: qué conductor usar y verificar que cumple con la normativa. Esta app solo incluye cálculos basados en los 19 pliegos RIC — no usa normas IEC u otras.',
       },
       {
         type: 'list',
         items: [
-          'Caída de tensión: calcula el % de caída y verifica que cumpla el RIC N°03 (3% en alimentador, 5% total). Sugiere sección si no cumple.',
-          'Ampacidad: determina la sección mínima del conductor según corriente, método de instalación (A1-F según IEC 60364-5-523), material, aislamiento, temperatura y agrupamiento.',
-          'Cortocircuito: calcula la Icc máxima y mínima en bornes y al final del circuito (IEC 60909). Te avisa si necesitas un poder de corte mayor a 10 kA.',
-          'Selectividad: recomienda el interruptor termomagnético (In, curva B/C/D, poder de corte) según el tipo de carga y la Icc prevista.',
+          'Caída de tensión: calcula el % de caída y verifica que cumpla el RIC N°03 pto 5.1.3 (3% en alimentador, 5% total). Sugiere sección si no cumple.',
+          'Ampacidad: determina la sección mínima del conductor según corriente, método de instalación (A1-F según RIC N°04 Tabla 4.4), material, aislamiento (PVC 70°C o XLPE 90°C), temperatura y agrupamiento. Aplica los factores de corrección de las Tablas 4.6 y 4.7.',
         ],
       },
       {
         type: 'callout',
         variant: 'success',
         text: 'Cada calculadora muestra en la parte inferior la referencia exacta al artículo del RIC que aplica, con cita textual del pliego.',
+      },
+      {
+        type: 'callout',
+        variant: 'info',
+        text: 'Esta app NO incluye calculadoras de cortocircuito (Icc) ni de selectividad de curvas (B/C/D) porque esas no están en el RIC. Para esos cálculos, consulta a un profesional electricista.',
       },
     ],
   },
