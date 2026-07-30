@@ -1,4 +1,4 @@
-/* ElectriChile Pro · Service Worker
+/* ElectroChile Pro · Service Worker
  *
  * Estrategia:
  *   - Pre-cache del app shell en la instalación.
@@ -7,7 +7,7 @@
  *   - Mensajes SKIP_WAITING para activar SW nuevo sin recargar forzado.
  */
 
-const VERSION = 'electrichile-v1.0.0';
+const VERSION = 'electrochile-v1.1.0';
 const APP_SHELL_CACHE = `app-shell-${VERSION}`;
 const STATIC_CACHE = `static-${VERSION}`;
 const RUNTIME_CACHE = `runtime-${VERSION}`;

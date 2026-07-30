@@ -28,7 +28,7 @@ export default function Header({ title, showBack, onBack }: HeaderProps) {
               <div className="w-8 h-8 rounded-lg bg-accent-primary/20 flex items-center justify-center">
                 <Zap className="w-5 h-5 text-accent-primary" />
               </div>
-              <span className="font-semibold text-foreground text-lg">ElectriChile</span>
+              <span className="font-semibold text-foreground text-lg">ElectroChile</span>
             </div>
           )}
           {title && <h1 className="font-semibold text-foreground truncate">{title}</h1>}

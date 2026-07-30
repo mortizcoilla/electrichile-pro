@@ -101,7 +101,7 @@ export const useInstallationStore = create<InstallationState>()(
       },
     }),
     {
-      name: 'electrichile-installations',
+      name: 'electrochile-installations',
       partialize: (state) => ({
         currentInstallation: { ...state.currentInstallation, photos: [] },
       }),

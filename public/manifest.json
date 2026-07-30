@@ -1,6 +1,6 @@
 {
-  "name": "ElectriChile Pro",
-  "short_name": "ElectriChile",
+  "name": "ElectroChile Pro",
+  "short_name": "ElectroChile",
   "description": "Herramientas profesionales para electricistas en Chile: calculadoras, cotizaciones y declaración TE1 según el RIC.",
   "start_url": "/",
   "scope": "/",

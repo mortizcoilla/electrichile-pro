@@ -176,7 +176,7 @@ export function generateQuotePDF(quote: Quote, profile: ElectricianProfile | nul
   const pageH = doc.internal.pageSize.getHeight();
   doc.setTextColor(150, 150, 150);
   doc.setFontSize(8);
-  doc.text('Documento generado por ElectriChile Pro · Cotización no constituye orden de compra', pageW / 2, pageH - 8, { align: 'center' });
+  doc.text('Documento generado por ElectroChile Pro · Cotización no constituye orden de compra', pageW / 2, pageH - 8, { align: 'center' });
 
   return doc.output('blob');
 }

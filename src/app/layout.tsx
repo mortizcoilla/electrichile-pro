@@ -2,13 +2,13 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "ElectriChile Pro",
+  title: "ElectroChile Pro",
   description: "Herramientas profesionales para electricistas en Chile",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
-    title: "ElectriChile Pro",
+    title: "ElectroChile Pro",
   },
 };
 
@@ -27,7 +27,7 @@ export const viewport: Viewport = {
 const themeScript = `
 (function() {
   try {
-    var mode = localStorage.getItem('electrichile-theme') || 'dark';
+    var mode = localStorage.getItem('electrochile-theme') || 'dark';
     var system = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     var effective = mode === 'system' ? system : mode;
     if (effective === 'dark') {

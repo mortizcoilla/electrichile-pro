@@ -46,7 +46,7 @@ export function buildQuoteMessage(quote: Quote, profile: ElectricianProfile | nu
     lines.push(`_Notas:_ ${quote.notes}`);
   }
   lines.push('');
-  lines.push('— Cotización generada por ElectriChile Pro');
+  lines.push('— Cotización generada por ElectroChile Pro');
   return lines.join('\n');
 }
 
@@ -74,7 +74,7 @@ export function buildTE1Message(decl: TE1Declaration): string {
   lines.push('');
   lines.push('Adjunto encontrarás el PDF con la declaración completa para energización ante la empresa distribuidora.');
   lines.push('');
-  lines.push('— Generado por ElectriChile Pro');
+  lines.push('— Generado por ElectroChile Pro');
   return lines.join('\n');
 }
 

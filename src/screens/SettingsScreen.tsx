@@ -204,7 +204,7 @@ export default function SettingsScreen({ onBack }: Props) {
           {saved ? '✓ Guardado' : 'Guardar cambios'}
         </Button>
 
-        <p className="text-xs text-muted text-center py-4">ElectriChile Pro v1.0.0</p>
+        <p className="text-xs text-muted text-center py-4">ElectroChile Pro v1.1.0</p>
       </div>
     </div>
   );

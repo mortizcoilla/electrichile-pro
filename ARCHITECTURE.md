@@ -1,12 +1,12 @@
 # Arquitectura del proyecto
 
-> Guía técnica sobre la estructura, patrones y decisiones de diseño de ElectriChile Pro. Orientada a contribuidores y mantenedores.
+> Guía técnica sobre la estructura, patrones y decisiones de diseño de ElectroChile Pro. Orientada a contribuidores y mantenedores.
 
 ---
 
 ## 🏛️ Visión general
 
-ElectriChile Pro es una **PWA client-side** construida con Next.js 15. Toda la lógica corre en el navegador — no hay backend, ni API routes, ni base de datos remota. El estado se persiste localmente con IndexedDB (Dexie) y localStorage (Zustand).
+ElectroChile Pro es una **PWA client-side** construida con Next.js 15. Toda la lógica corre en el navegador — no hay backend, ni API routes, ni base de datos remota. El estado se persiste localmente con IndexedDB (Dexie) y localStorage (Zustand).
 
 ```
 ┌────────────────────────────────────────────────────────┐
@@ -382,7 +382,7 @@ Toda función pública en `utils/` debe tener JSDoc con:
 - **Forzar update**: Application → Service Workers → "Update" o "Unregister" + reload
 - **Ver el manifest**: Application → Manifest
 - **Limpiar localStorage**: DevTools → Application → Storage → Clear site data
-- **Ver la base IndexedDB**: Application → Storage → IndexedDB → ElectriChileDB
+- **Ver la base IndexedDB**: Application → Storage → IndexedDB → ElectroChileDB
 
 ---
 

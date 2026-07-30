@@ -20,6 +20,6 @@ export const useAppStore = create<AppState>()(
       searchQuery: '',
       setSearchQuery: (query) => set({ searchQuery: query }),
     }),
-    { name: 'electrichile-app' }
+    { name: 'electrochile-app' }
   )
 );

@@ -55,7 +55,7 @@ export default function HelpScreen({ onBack, onNavigate }: Props) {
             <h1 className="text-lg font-semibold text-foreground">Centro de ayuda</h1>
           </div>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Todo lo que necesitás saber para usar ElectriChile Pro. Buscá una palabra clave o recorré las secciones.
+            Todo lo que necesitás saber para usar ElectroChile Pro. Buscá una palabra clave o recorré las secciones.
           </p>
         </div>
 
@@ -182,7 +182,7 @@ export default function HelpScreen({ onBack, onNavigate }: Props) {
 
         {/* Footer */}
         <p className="text-xs text-muted text-center py-4">
-          ElectriChile Pro v{CHANGELOG[0]?.version} · {CHANGELOG[0]?.date}
+          ElectroChile Pro v{CHANGELOG[0]?.version} · {CHANGELOG[0]?.date}
         </p>
       </div>
     </div>

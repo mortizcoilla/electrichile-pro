@@ -34,8 +34,8 @@ export interface QuickStartStep {
   route?: string;
 }
 
-export const APP_VERSION = '1.0.0';
-export const APP_LAST_UPDATE = '2026-07-17';
+export const APP_VERSION = '1.1.0';
+export const APP_LAST_UPDATE = '2026-07-30';
 
 /** Pasos para empezar a usar la app. */
 export const QUICK_START: QuickStartStep[] = [
@@ -68,6 +68,13 @@ export const QUICK_START: QuickStartStep[] = [
 /** Changelog de la versión actual. */
 export const CHANGELOG: Array<{ version: string; date: string; changes: string[] }> = [
   {
+    version: '1.1.0',
+    date: '2026-07-30',
+    changes: [
+      'Renombrada la app a "ElectroChile" (antes "ElectriChile")',
+    ],
+  },
+  {
     version: '1.0.0',
     date: '2026-07-17',
     changes: [
@@ -89,13 +96,13 @@ export const CHANGELOG: Array<{ version: string; date: string; changes: string[]
 export const HELP_SECTIONS: HelpSection[] = [
   {
     id: 'intro',
-    title: '¿Qué es ElectriChile Pro?',
+    title: '¿Qué es ElectroChile Pro?',
     icon: Info,
     description: 'Una PWA para electricistas chilenos con calculadoras técnicas, cotizador y declaración TE1 — todo según el RIC vigente.',
     content: [
       {
         type: 'paragraph',
-        text: 'ElectriChile Pro es una herramienta pensada para el trabajo en terreno del instalador electricista en Chile. Reúne en un solo lugar las calculaciones que haces a diario, los documentos que entregas a tus clientes y la declaración oficial que presentas ante la SEC.',
+        text: 'ElectroChile Pro es una herramienta pensada para el trabajo en terreno del instalador electricista en Chile. Reúne en un solo lugar las calculaciones que haces a diario, los documentos que entregas a tus clientes y la declaración oficial que presentas ante la SEC.',
       },
       {
         type: 'callout',
@@ -221,7 +228,7 @@ export const HELP_SECTIONS: HelpSection[] = [
     content: [
       {
         type: 'paragraph',
-        text: 'ElectriChile Pro es una PWA (Progressive Web App). Eso significa que se puede instalar como una app nativa en tu celular o notebook, y funciona completamente offline.',
+        text: 'ElectroChile Pro es una PWA (Progressive Web App). Eso significa que se puede instalar como una app nativa en tu celular o notebook, y funciona completamente offline.',
       },
       {
         type: 'steps',

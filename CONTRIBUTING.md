@@ -1,4 +1,4 @@
-# Contribuir a ElectriChile Pro
+# Contribuir a ElectroChile Pro
 
 ¡Gracias por tu interés en colaborar! Toda contribución es bienvenida — desde reportar un bug hasta agregar una nueva calculadora.
 
@@ -170,4 +170,4 @@ Si tenés dudas antes de contribuir:
 - 📧 contacto@electrichile.cl
 - 🐛 [GitHub Issues](https://github.com/miguel/electrichile-pro/issues)
 
-¡Gracias por hacer de ElectriChile Pro una mejor herramienta para los electricistas chilenos! ⚡
+¡Gracias por hacer de ElectroChile Pro una mejor herramienta para los electricistas chilenos! ⚡

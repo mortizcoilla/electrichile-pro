@@ -161,7 +161,7 @@ export function generateTE1PDF(declaration: TE1Declaration, profile?: Electricia
   const pageH = doc.internal.pageSize.getHeight();
   doc.setTextColor(150, 150, 150);
   doc.setFontSize(8);
-  doc.text(`Documento generado el ${formatDate(new Date())} por ElectriChile Pro`, pageW / 2, pageH - 8, { align: 'center' });
+  doc.text(`Documento generado el ${formatDate(new Date())} por ElectroChile Pro`, pageW / 2, pageH - 8, { align: 'center' });
 
   return doc.output('blob');
 }

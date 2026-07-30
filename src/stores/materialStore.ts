@@ -42,6 +42,6 @@ export const useMaterialStore = create<MaterialState>()(
       getTotal: () => get().cart.reduce((sum, item) => sum + item.totalPrice, 0),
       getItemCount: () => get().cart.reduce((sum, item) => sum + item.quantity, 0),
     }),
-    { name: 'electrichile-cart' }
+    { name: 'electrochile-cart' }
   )
 );

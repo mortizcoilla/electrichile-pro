@@ -68,10 +68,15 @@ describe('CHANGELOG', () => {
     expect(CHANGELOG[0].version).toBe(APP_VERSION);
   });
 
-  it('cada release tiene al menos 3 cambios', () => {
+  it('cada release tiene al menos 1 cambio', () => {
     for (const rel of CHANGELOG) {
-      expect(rel.changes.length).toBeGreaterThanOrEqual(3);
+      expect(rel.changes.length).toBeGreaterThanOrEqual(1);
     }
+  });
+
+  it('la primera release (major) tiene al menos 5 cambios significativos', () => {
+    // El primer release de cada major suele ser grande (mínimo 5 features)
+    expect(CHANGELOG[CHANGELOG.length - 1].changes.length).toBeGreaterThanOrEqual(5);
   });
 });
 

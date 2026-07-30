@@ -1,7 +1,7 @@
 import Dexie, { Table } from 'dexie';
 import { Installation, CalculationHistory, ElectricianProfile, Quote, TE1Declaration } from '@/types';
 
-class ElectriChileDB extends Dexie {
+class ElectroChileDB extends Dexie {
   installations!: Table<Installation>;
   history!: Table<CalculationHistory>;
   profile!: Table<ElectricianProfile & { id: string }>;
@@ -9,7 +9,7 @@ class ElectriChileDB extends Dexie {
   te1Declarations!: Table<TE1Declaration>;
 
   constructor() {
-    super('ElectriChileDB');
+    super('ElectroChileDB');
     this.version(1).stores({
       installations: 'id, createdAt, status, commune',
       history: 'id, type, timestamp, favorite',
@@ -25,7 +25,7 @@ class ElectriChileDB extends Dexie {
   }
 }
 
-export const db = new ElectriChileDB();
+export const db = new ElectroChileDB();
 
 export async function addInstallation(installation: Installation) {
   return db.installations.add(installation);

@@ -209,6 +209,6 @@ export const useQuoteStore = create<QuoteStoreState>()(
 
       reset: () => set({ currentQuote: null }),
     }),
-    { name: 'electrichile-quote' }
+    { name: 'electrochile-quote' }
   )
 );

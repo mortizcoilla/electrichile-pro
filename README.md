@@ -1,4 +1,4 @@
-# ⚡ ElectriChile Pro
+# ⚡ ElectroChile Pro
 
 > **PWA para electricistas chilenos** — Calculadoras técnicas, cotizador y declaración TE1 según el RIC vigente. Funciona 100% offline.
 
@@ -15,7 +15,7 @@
 
 ## 🎯 ¿Qué es?
 
-ElectriChile Pro es una herramienta pensada para el **instalador electricista en Chile**. Reúne en un solo lugar todo lo que necesitás en tu día a día:
+ElectroChile Pro es una herramienta pensada para el **instalador electricista en Chile**. Reúne en un solo lugar todo lo que necesitás en tu día a día:
 
 - 🧮 **4 calculadoras técnicas** según el RIC (Reglamento de Instalaciones de Consumo)
 - 💰 **Cotizador** con plantillas, IVA y PDF profesional

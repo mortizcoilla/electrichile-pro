@@ -20,7 +20,7 @@ export type ThemeMode = 'dark' | 'light' | 'system';
 /** Theme efectivo aplicado (resuelve 'system' a un valor concreto). */
 export type EffectiveTheme = 'dark' | 'light';
 
-const STORAGE_KEY = 'electrichile-theme';
+const STORAGE_KEY = 'electrochile-theme';
 
 /**
  * Lee el theme persistido desde localStorage.

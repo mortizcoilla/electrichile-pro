@@ -73,7 +73,7 @@ export function generateInstallationPDF(installation: Installation): Blob {
   const pageH = doc.internal.pageSize.getHeight();
   doc.setFontSize(8);
   doc.setTextColor(150, 150, 150);
-  doc.text('Generado por ElectriChile Pro', pageW / 2, pageH - 8, { align: 'center' });
+  doc.text('Generado por ElectroChile Pro', pageW / 2, pageH - 8, { align: 'center' });
 
   return doc.output('blob');
 }

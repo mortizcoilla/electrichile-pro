@@ -20,7 +20,7 @@ export default function Sidebar({ activeTab, onTabChange }: SidebarProps) {
           <Zap className="w-5 h-5 text-accent-primary" />
         </div>
         <div className="flex flex-col leading-tight">
-          <span className="font-semibold text-foreground">ElectriChile</span>
+          <span className="font-semibold text-foreground">ElectroChile</span>
           <span className="text-[10px] text-muted uppercase tracking-wider">Pro</span>
         </div>
       </div>
