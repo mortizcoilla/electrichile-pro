@@ -14,7 +14,10 @@ interface HeaderProps {
  */
 export default function Header({ title, showBack, onBack }: HeaderProps) {
   return (
-    <header className="sticky top-0 z-30 md:hidden bg-background/80 backdrop-blur-lg border-b border-border">
+    <header
+      className="sticky top-0 z-30 md:hidden bg-background/80 backdrop-blur-lg border-b border-border"
+      style={{ paddingTop: "env(safe-area-inset-top)" }}
+    >
       <div className="flex items-center justify-between h-14 px-4">
         <div className="flex items-center gap-2 min-w-0">
           {showBack ? (
