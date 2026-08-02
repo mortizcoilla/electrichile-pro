@@ -11,21 +11,25 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#0a0e1a",
-        surface: "#111827",
-        elevated: "#1a2236",
+        // Cada token apunta a la CSS variable definida en globals.css
+        // con el placeholder <alpha-value> de Tailwind, así clases como
+        // `bg-elevated/40` o `text-accent-primary/80` siguen funcionando
+        // y cambian de valor cuando el tema cambia.
+        background: "hsl(var(--background) / <alpha-value>)",
+        surface: "hsl(var(--surface) / <alpha-value>)",
+        elevated: "hsl(var(--elevated) / <alpha-value>)",
         accent: {
-          primary: "#f59e0b",
-          secondary: "#3b82f6",
-          success: "#22c55e",
-          warning: "#eab308",
-          danger: "#ef4444",
+          primary: "hsl(var(--accent-primary) / <alpha-value>)",
+          secondary: "hsl(var(--accent-secondary) / <alpha-value>)",
+          success: "hsl(var(--accent-success) / <alpha-value>)",
+          warning: "hsl(var(--accent-warning) / <alpha-value>)",
+          danger: "hsl(var(--accent-danger) / <alpha-value>)",
         },
-        foreground: "#f8fafc",
-        muted: "#94a3b8",
-        "muted-foreground": "#64748b",
-        border: "#1e293b",
-        "border-strong": "#334155",
+        foreground: "hsl(var(--foreground) / <alpha-value>)",
+        muted: "hsl(var(--muted) / <alpha-value>)",
+        "muted-foreground": "hsl(var(--muted-foreground) / <alpha-value>)",
+        border: "hsl(var(--border) / <alpha-value>)",
+        "border-strong": "hsl(var(--border-strong) / <alpha-value>)",
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
